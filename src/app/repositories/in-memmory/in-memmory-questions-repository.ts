@@ -1,8 +1,8 @@
 import { Prisma, Question } from "@prisma/client";
-import { QuestionRepository } from "../questions-repository";
+import { QuestionsRepository } from "../questions-repository";
 import { randomUUID } from "crypto";
 
-export class InMemmoryQuestionsRepository implements QuestionRepository {
+export class InMemmoryQuestionsRepository implements QuestionsRepository {
   public items: Question[] = [];
 
   async create(data: Question) {

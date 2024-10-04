@@ -1,5 +1,5 @@
 import { Prisma, Question } from "@prisma/client";
 
-export interface QuestionRepository {
+export interface QuestionsRepository {
   create(data: Prisma.QuestionCreateInput): Promise<Question>;
 }
