@@ -16,4 +16,14 @@ export class InMemmoryQuestionsRepository implements QuestionsRepository {
 
     return question;
   }
+
+  async findMany(userId: string) {
+    const questions = this.items.filter((item) => item.userId === userId);
+
+    if (!questions) {
+      return null;
+    }
+
+    return questions;
+  }
 }
