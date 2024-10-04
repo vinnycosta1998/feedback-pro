@@ -1,5 +1,6 @@
 import { Prisma, Question } from "@prisma/client";
 import { QuestionsRepository } from "../../../repositories/questions-repository";
+import { TitleLengthError } from "../../../errors/TitleLengthError";
 
 interface CreateQuestionUseCaseRequest extends Prisma.QuestionCreateInput {}
 
@@ -14,7 +15,7 @@ export class CreateQuestionUseCase {
     ...props
   }: CreateQuestionUseCaseRequest): Promise<CreateQuestionUseCaseResponse> {
     if (props.title.length < 12 || props.title.length > 120) {
-      throw new Error("Title has length between 12 and 120 caractheres ");
+      throw new TitleLengthError();
     }
 
     const question = await this.questionsRepository.create({
