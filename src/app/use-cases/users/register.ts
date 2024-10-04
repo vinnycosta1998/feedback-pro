@@ -2,6 +2,7 @@ import { Prisma, User } from "@prisma/client";
 import { UsersRepository } from "../../repositories/users-repository";
 import { hash } from "bcryptjs";
 import { UserAlreadyExistsError } from "../../errors/UserAlreadyExistsError";
+import { PasswordLengthError } from "../../errors/PasswordLengthError";
 interface RegisterUseCaseRequest extends Prisma.UserCreateInput {}
 
 interface RegisterUseCaseResponse {
@@ -23,7 +24,7 @@ export class RegisterUseCase {
     }
 
     if (props.password.length < 8 || props.password.length > 14) {
-      throw new Error("Password has length between 8 and 14 caractheres");
+      throw new PasswordLengthError();
     }
 
     const password_hash = await hash(props.password, 8);
