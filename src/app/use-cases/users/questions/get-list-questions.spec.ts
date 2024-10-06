@@ -1,7 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { InMemmoryQuestionsRepository } from "../../../repositories/in-memmory/in-memmory-questions-repository";
 import { GetListQuestionUseCase } from "./get-list-questions";
-import { TitleLengthError } from "../../../errors/TitleLengthError";
 import { randomUUID } from "crypto";
 
 let questionsRepository: InMemmoryQuestionsRepository;
