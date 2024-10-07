@@ -10,7 +10,7 @@ interface GetListAnswerResponse {
   answers: Answer[];
 }
 
-export class GetListAnswers {
+export class GetListAnswersUseCase {
   constructor(private answersRepository: AnswerRepository) {}
 
   async execute({
