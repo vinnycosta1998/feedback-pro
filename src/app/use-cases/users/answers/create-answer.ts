@@ -8,7 +8,7 @@ interface CreateAnswerResponse {
   answer: Answer;
 }
 
-export class CretaeAnswerUseCase {
+export class CreateAnswerUseCase {
   constructor(private answerRepository: AnswerRepository) {}
 
   async execute({
