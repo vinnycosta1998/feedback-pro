@@ -1,7 +1,6 @@
 import Image from "next/image";
 import iphoneImg from "../assets/iphone.svg";
 import ipadImg from "../assets/ipad.svg";
-import iphoneContentImg from "../assets/iphone-content.png";
 import Link from "next/link";
 
 export default function Home() {
